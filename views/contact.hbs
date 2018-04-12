@@ -1,0 +1,24 @@
+<h1 class="text-center">Contact Us</h1>
+
+<form class="col-md-6 col-md-offset-3" method="post">
+    {{#each errorMessages}}
+        <div class="alert alert-danger">
+            {{this.msg}}
+        </div>
+    {{/each}}
+
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" placeholder="Your Name" name = "name" value = {{name}}>
+    </div>
+    <div class="form-group">
+        <label>Email address</label>
+        <input type="email" class="form-control" placeholder="Your Email" name = "email" value = {{email}}>
+    </div>
+    <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" rows="3" name = "message">{{message}}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
