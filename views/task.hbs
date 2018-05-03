@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         <div class="col-md-8">
-            <textarea id="code-screen"></textarea>
+            <textarea id="code-screen">{{content}}</textarea>
         </div>
         <div class="col-md-4" id="chatbox">
 
@@ -39,9 +39,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.min.js"></script>
 
+<script src="/plugins/ot/ot.js"></script>
+
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
+
+    var EditorClient = ot.EditorClient;
+    var SocketIOAdapter = ot.SocketIOAdapter;
+    var CodeMirrorAdapter = ot.CodeMirrorAdapter;
 
     var socket = io.connect('http://localhost:3000/');
 
@@ -49,6 +55,22 @@
     var editor = CodeMirror.fromTextArea(document.getElementById("code-screen"), {
         lineNumbers: true,
         theme: "monokai"
+    });
+
+    var code =$('#code-screen').val();
+
+
+    var cmClient;
+    function init(str, revision, clients, serverAdapter) {
+        if(!code) {
+            editor.setValue(str);
+        }
+
+        cmClient = window.cmClient = new EditorClient(revision, clients, serverAdapter, new CodeMirrorAdapter(editor))
+    }
+
+    socket.on('doc', function (obj) {
+        init(obj.str, obj.revision, obj.clients, new SocketIOAdapter(socket));
     });
 
     var username = $("#chatbox-username").val();
@@ -59,7 +81,7 @@
     }
 
     var roomID = $('#roomID').val();
-    socket.emit('joinRoom',  {room: roomID});
+    socket.emit('joinRoom',  {room: roomID, username: username});
 
     var userMessage = function (name, text) {
         return ('<li class="media" ><div class="media-body"> <div class="media">'
