@@ -17,8 +17,10 @@ Features Of the application:
 - Live highlighting
 - Live chatting
 
-
+Here is a demo video of the application 👇
 [![Video](http://img.youtube.com/vi/gMF0qfnjXvI/0.jpg)](http://www.youtube.com/watch?v=gMF0qfnjXvI)
+
+Snapshots of the project 👇
 ![Alt Text](snaps/1.png?raw=true "Title")
 ![Alt Text](snaps/2.png?raw=true "Title")
 ![Alt Text](snaps/3.png?raw=true "Title")
