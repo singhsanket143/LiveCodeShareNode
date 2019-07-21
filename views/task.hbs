@@ -36,7 +36,7 @@
                     </span>
                 </div>
                 <div class="panel-body">
-                    <ul class="media-list" style="height: 300px;overflow-y: scroll" id="chatbox-listMessages">
+                    <ul class="media-list" style="height: 64px;overflow-y: scroll" id="chatbox-listMessages">
 
                     </ul>
                 </div>
@@ -70,7 +70,7 @@
     var SocketIOAdapter = ot.SocketIOAdapter;
     var CodeMirrorAdapter = ot.CodeMirrorAdapter;
 
-    var socket = io.connect('http://localhost:3000/');
+    var socket = io.connect('http://localhost:8000/');
 
 
     var editor = CodeMirror.fromTextArea(document.getElementById("code-screen"), {
