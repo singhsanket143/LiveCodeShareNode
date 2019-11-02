@@ -14,7 +14,7 @@
     "express-validator": "^3.1.2",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
-    "mongoose": "^4.8.6",
+    "mongoose": "^5.7.5",
     "morgan": "~1.9.0",
     "nodemailer": "^3.1.5",
     "ot": "git+https://github.com/Operational-Transformation/ot.js.git",
