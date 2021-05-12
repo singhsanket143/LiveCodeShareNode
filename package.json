@@ -16,7 +16,7 @@
     "http-errors": "~1.6.2",
     "mongoose": "^4.8.6",
     "morgan": "~1.9.0",
-    "nodemailer": "^3.1.5",
+    "nodemailer": "^6.4.16",
     "ot": "git+https://github.com/Operational-Transformation/ot.js.git",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
